@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import { FaWordpress } from 'react-icons/fa';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import devan from '../../public/test.jpeg';
 import React from 'react';
@@ -14,8 +15,8 @@ export default function Home() {
 
     return (
         <div className={darkMode ? 'dark' : ''}>
-            <main className="bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
-                <section className="min-h-screen">
+            <main className="bg-white px-4 md:px-10 lg:px-40 dark:bg-gray-900">
+                <section className="min-h-screen flex flex-col justify-between">
                     <nav className="py-10 mb-12 flex justify-between dark:text-white">
                         <div>
                             <a
@@ -70,7 +71,7 @@ export default function Home() {
                             </li>
                         </ul>
                     </nav>
-                    <div className="flex items-center justify-center max-w-xl mx-auto gap-8">
+                    <div className="flex items-center justify-center max-w-3xl mx-auto gap-9">
                         <div className="flex-none shadow-md bg-gradient-to-b from-pink-300 to-lavender-300 rounded-full w-40 h-40 relative overflow-hidden md:w-64 md:h-64">
                             <Image
                                 src={devan}
@@ -80,13 +81,13 @@ export default function Home() {
                         </div>
                         <div className="flex-grow text-left space-y-5">
                             <p className="text-xl font-semi-bold bg-pink-200 dark:bg-pink-400 inline-block rounded-sm px-1 py-0.5 dark:text-gray-200">
-                                Hello I'm
+                                Hey there, I'm
                             </p>
 
-                            <div className="text-5xl py-1 text-pink-500 font-semibold dark:text-pink-400 md:text-6xl font-mono">
+                            <div className="text-4xl py-1 text-pink-500 font-semibold dark:text-pink-400 md:text-5xl font-mono">
                                 <Typewriter
                                     options={{
-                                        strings: ['Anne M'],
+                                        strings: ['Anne Martinez'],
                                         autoStart: true,
                                         loop: true,
                                     }}
@@ -96,15 +97,18 @@ export default function Home() {
                                 Software Developer
                             </h3>
                             <p className="text-md py-3 leading-7 text-gray-700 dark:text-gray-200 md:text-lg">
-                                So yeah, I'm still brainstorming what to put as
-                                my profile description. For now, let's keep it
-                                this way. Just thinking about the best things to
-                                say about myself. But kidding aside, this is a
-                                placeholder.
+                                I build things with code. I have had the chance
+                                to work with some great teams. Over time, I have
+                                picked up skills in both front-end and back-end
+                                areas, especially with C# and React. Although I
+                                have learned a lot, I am continually eager to
+                                dive into new areas and expand my skills. Have
+                                an idea or just want to talk tech? Reach out; I
+                                am always up for a chat or a new challenge.
                             </p>
                         </div>
                     </div>
-                    <div className=" ml-12 text-2xl flex items-center justify-center gap-2 py-3 text-gray-700 dark:text-gray-400">
+                    <div className="text-2xl flex items-center justify-center gap-2 py-3 text-gray-700 dark:text-gray-400">
                         <a
                             href="https://www.linkedin.com/in/anne-merlyn-martinez/"
                             target="_blank"
@@ -118,6 +122,14 @@ export default function Home() {
                             rel="noopener noreferrer"
                         >
                             <AiFillGithub />
+                        </a>
+                        <a
+                            href="https://your-wordpress-site-url.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaWordpress size={24} />{' '}
+                            {/* You can adjust the size as needed */}
                         </a>
                     </div>
                 </section>
