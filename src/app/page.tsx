@@ -12,13 +12,78 @@ import Typewriter from 'typewriter-effect';
 export default function Home() {
     const [darkMode, setDarkMode] = React.useState(false);
     const [activeTab, setActiveTab] = React.useState('home');
+    const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
 
     return (
         <div className={darkMode ? 'dark' : ''}>
             <main className="bg-white px-4 md:px-10 lg:px-40 dark:bg-gray-900">
                 <section className="min-h-screen flex flex-col justify-between">
                     <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                        <div>
+                        <div className="md:hidden flex items-center justify-between w-full">
+                            <button
+                                onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                                className="bg-pink-500 dark:bg-pink-400 text-white p-2 rounded"
+                            >
+                                ☰
+                            </button>
+                            <div className="flex items-center">
+                                <BsFillMoonStarsFill
+                                    onClick={() => setDarkMode(!darkMode)}
+                                    className="cursor-pointer text-2xl dark:text-white text-gray-800 ml-4"
+                                    aria-label="Toggle dark mode"
+                                ></BsFillMoonStarsFill>
+                                <a
+                                    className="bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4"
+                                    href="#"
+                                >
+                                    Hire Me
+                                </a>
+                            </div>
+                            {mobileNavOpen && (
+                                <div className="absolute top-16 left-0 w-full bg-white dark:bg-gray-800 p-4 rounded border shadow-lg flex flex-col">
+                                    {/* Links */}
+                                    <div className="flex flex-col gap-2">
+                                        <a
+                                            href="#home"
+                                            onClick={() => setActiveTab('home')}
+                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                                activeTab === 'home'
+                                                    ? 'font-bold border-b-2 border-pink-600'
+                                                    : ''
+                                            }`}
+                                        >
+                                            Home
+                                        </a>
+                                        <a
+                                            href="#blog"
+                                            onClick={() => setActiveTab('blog')}
+                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                                activeTab === 'blog'
+                                                    ? 'font-bold border-b-2 border-pink-600'
+                                                    : ''
+                                            }`}
+                                        >
+                                            Blog
+                                        </a>
+                                        <a
+                                            href="#about"
+                                            onClick={() =>
+                                                setActiveTab('about')
+                                            }
+                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                                activeTab === 'about'
+                                                    ? 'font-bold border-b-2 border-pink-600'
+                                                    : ''
+                                            }`}
+                                        >
+                                            About Me
+                                        </a>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="hidden md:flex">
                             <a
                                 href="#home"
                                 onClick={() => setActiveTab('home')}
@@ -53,7 +118,7 @@ export default function Home() {
                                 About Me
                             </a>
                         </div>
-                        <ul className="flex items-center">
+                        <ul className="hidden md:flex items-center">
                             <li>
                                 <BsFillMoonStarsFill
                                     onClick={() => setDarkMode(!darkMode)}
