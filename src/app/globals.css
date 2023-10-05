@@ -34,3 +34,7 @@ body {
     font-family: 'burtons';
     src: url('/public/Burtons.otf');
 }
+
+.active {
+    @apply font-bold border-b-2 border-pink-600; /* Example */
+}

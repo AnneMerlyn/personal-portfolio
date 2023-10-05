@@ -10,6 +10,7 @@ import Typewriter from 'typewriter-effect';
 
 export default function Home() {
     const [darkMode, setDarkMode] = React.useState(false);
+    const [activeTab, setActiveTab] = React.useState('home');
 
     return (
         <div className={darkMode ? 'dark' : ''}>
@@ -19,21 +20,36 @@ export default function Home() {
                         <div>
                             <a
                                 href="#home"
-                                className="text-xl font-burtons dark:text-white text-pink-500 mx-4"
+                                onClick={() => setActiveTab('home')}
+                                className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
+                                    activeTab === 'home'
+                                        ? 'font-bold border-b-2 border-pink-600'
+                                        : ''
+                                }`}
                             >
                                 Home
                             </a>
                             <a
                                 href="#blog"
-                                className="text-xl font-burtons dark:text-white text-pink-500 mx-4"
+                                onClick={() => setActiveTab('blog')}
+                                className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
+                                    activeTab === 'blog'
+                                        ? 'font-bold border-b-2 border-pink-600'
+                                        : ''
+                                }`}
                             >
                                 Blog
                             </a>
                             <a
                                 href="#about"
-                                className="text-xl font-burtons dark:text-white text-pink-500 mx-4"
+                                onClick={() => setActiveTab('about')}
+                                className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
+                                    activeTab === 'about'
+                                        ? 'font-bold border-b-2 border-pink-600'
+                                        : ''
+                                }`}
                             >
-                                About
+                                About Me
                             </a>
                         </div>
                         <ul className="flex items-center">
