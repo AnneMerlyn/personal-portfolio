@@ -28,7 +28,7 @@ const Profile: React.FC<ProfileProps> = ({
             </div>
             <div className="flex-grow text-center md:text-left space-y-5 mt-6 md:mt-0">
                 <p className="text-xl font-semi-bold bg-pink-200 dark:bg-pink-400 inline-block rounded-sm px-1 py-0.5 dark:text-gray-200">
-                    Hey there, I'm
+                    Hey there, I&apos;m
                 </p>
                 <div className="text-4xl py-1 text-pink-500 font-semibold dark:text-pink-400 md:text-5xl font-mono">
                     <Typewriter
