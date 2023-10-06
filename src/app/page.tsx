@@ -40,13 +40,13 @@ export default function Home() {
                                 </a>
                             </div>
                             {mobileNavOpen && (
-                                <div className="absolute top-16 left-0 w-full bg-white dark:bg-gray-800 p-4 rounded border shadow-lg flex flex-col">
+                                <div className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col">
                                     {/* Links */}
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex flex-col gap-1">
                                         <a
                                             href="#home"
                                             onClick={() => setActiveTab('home')}
-                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                            className={`text-lg font-burtons dark:text-white text-pink-500 ${
                                                 activeTab === 'home'
                                                     ? 'font-bold border-b-2 border-pink-600'
                                                     : ''
@@ -57,7 +57,7 @@ export default function Home() {
                                         <a
                                             href="#blog"
                                             onClick={() => setActiveTab('blog')}
-                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                            className={`text-lg font-burtons dark:text-white text-pink-500 ${
                                                 activeTab === 'blog'
                                                     ? 'font-bold border-b-2 border-pink-600'
                                                     : ''
@@ -70,7 +70,7 @@ export default function Home() {
                                             onClick={() =>
                                                 setActiveTab('about')
                                             }
-                                            className={`text-xl font-burtons dark:text-white text-pink-500 ${
+                                            className={`text-lg font-burtons dark:text-white text-pink-500 ${
                                                 activeTab === 'about'
                                                     ? 'font-bold border-b-2 border-pink-600'
                                                     : ''
