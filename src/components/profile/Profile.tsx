@@ -1,11 +1,10 @@
-// components/Profile/Profile.tsx
 import React from 'react';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import { StaticImageData } from 'next/image';
 
 type ProfileProps = {
-    imageSrc: StaticImageData; // URL or path to the image
+    imageSrc: StaticImageData;
     name: string;
     jobTitle: string;
     description: string;

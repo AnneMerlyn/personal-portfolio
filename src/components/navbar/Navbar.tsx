@@ -1,5 +1,3 @@
-// components/NavBar/NavBar.tsx
-
 import React from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { MobileNavButton } from './MobileNavButton';
@@ -22,7 +20,6 @@ export const NavBar: React.FC<NavBarProps> = ({
     setMobileNavOpen,
 }) => {
     return (
-        // ... Your navbar JSX code ...
         <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <div className="md:hidden flex items-center justify-between w-full">
                 <MobileNavButton

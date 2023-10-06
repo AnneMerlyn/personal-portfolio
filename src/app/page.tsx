@@ -1,13 +1,8 @@
 'use client';
 
-import Image from 'next/image';
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import { FaWordpress } from 'react-icons/fa';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
 import devan from '../../public/test.jpeg';
 import React from 'react';
 import '../styles/customStyles.css';
-import Typewriter from 'typewriter-effect';
 import NavBar from '@/components/navbar/Navbar';
 import Profile from '@/components/profile/Profile';
 import SocialLinks from '@/components/social/SocialLinks';

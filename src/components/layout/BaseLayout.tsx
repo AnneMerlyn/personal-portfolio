@@ -1,5 +1,3 @@
-// components/Layout/BaseLayout.tsx
-
 import React from 'react';
 
 interface BaseLayoutProps {
