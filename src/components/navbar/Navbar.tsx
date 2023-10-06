@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { MobileNavButton } from './MobileNavButton';
+import { MobileNavButton } from '@/components/navbar/MobileNavButton';
 
 type NavBarProps = {
     darkMode: boolean;

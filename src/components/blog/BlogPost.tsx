@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BlogPostProps } from '../../types';
+import { BlogPostProps } from '@/types';
 
 const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
