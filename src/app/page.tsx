@@ -8,6 +8,7 @@ import Profile from '@/components/profile/Profile';
 import SocialLinks from '@/components/social/SocialLinks';
 import BlogPost from '@/components/blog/BlogPost';
 import { blogPosts } from '@/constants';
+import AboutMe from '@/components/about/AboutMe';
 
 export default function Home() {
     const [darkMode, setDarkMode] = React.useState(true);
@@ -28,7 +29,7 @@ export default function Home() {
     return (
         <div className={darkMode ? 'dark' : ''}>
             <main className="bg-slate-50 px-4 md:px-10 lg:px-40 dark:bg-gray-900">
-                <section className="min-h-screen flex flex-col justify-between">
+                <section className="min-h-screen flex flex-col">
                     <NavBar
                         darkMode={darkMode}
                         setDarkMode={setDarkMode}
@@ -80,6 +81,7 @@ export default function Home() {
                             )}
                         </div>
                     )}
+                    {activeTab === 'about' && <AboutMe />}
                 </section>
             </main>
         </div>
