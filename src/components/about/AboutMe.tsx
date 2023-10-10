@@ -11,12 +11,13 @@ import '../../styles/customStyles.css';
 
 const AboutMe: React.FC = () => {
     return (
-        <div className="about-me-section pt-0 mt-0">
+        <div className="about-me-section pt-0 md:p-4 mt-0">
             {/* Personal Background */}
             <p className="text-gray-600 dark:text-gray-300 font-serif transition-font">
-                I&apos;m originally from Philippines.. When I&apos;m not
-                immersed in coding, you&apos;ll often find me on a beach,
-                patiently awaiting the sunset..
+                I am originally from the Philippines but currently work remotely
+                based in Germany. When I&apos;m not engrossed in coding, I can
+                often be found at the beach, waiting patiently for the
+                sunset.....
             </p>
 
             {/* Technical Skills */}
@@ -133,7 +134,7 @@ const AboutMe: React.FC = () => {
             </div> */}
 
             {/* CTA */}
-            <div className="mt-6">
+            <div className="mt-8">
                 <a
                     href="[Link to your Resume or Contact Form]"
                     className="bg-pink-500 text-white px-6 py-2 rounded-pill hover:bg-pink-600 transition-all duration-300 shadow-md"
