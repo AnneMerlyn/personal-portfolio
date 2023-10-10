@@ -60,7 +60,7 @@ export default function Home() {
                         </>
                     )}
                     {activeTab === 'blog' && (
-                        <div className="py-1">
+                        <div className="py-1 md:py-10">
                             {displayedPosts.map((post) => (
                                 <BlogPost
                                     key={post.id}
@@ -81,7 +81,11 @@ export default function Home() {
                             )}
                         </div>
                     )}
-                    {activeTab === 'about' && <AboutMe />}
+                    {activeTab === 'about' && (
+                        <div className="py-1 md:py-10">
+                            <AboutMe />
+                        </div>
+                    )}
                 </section>
             </main>
         </div>

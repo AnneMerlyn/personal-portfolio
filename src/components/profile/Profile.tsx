@@ -17,7 +17,7 @@ const Profile: React.FC<ProfileProps> = ({
     description,
 }) => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center max-w-3xl mx-auto gap-6 mt-8 md:gap-9">
+        <div className="flex flex-col md:flex-row items-center justify-center max-w-3xl mx-auto gap-6 mt-8 md:mt-28 md:gap-9">
             <div className="shadow-md bg-gradient-to-b from-pink-300 to-lavender-300 rounded-full w-40 h-40 relative overflow-hidden md:w-64 md:h-64 md:flex-none">
                 <Image
                     src={imageSrc}
