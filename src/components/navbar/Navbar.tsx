@@ -41,7 +41,6 @@ export const NavBar: React.FC<NavBarProps> = ({
                     </div>
                     {mobileNavOpen && (
                         <div className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col">
-                            {/* Links */}
                             <div className="flex flex-col gap-1">
                                 <a
                                     href="#home"

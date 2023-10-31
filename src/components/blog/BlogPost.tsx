@@ -5,6 +5,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const readTime = Math.ceil(content.split(' ').length / 200);
 
+    // Get the first two sentences (splitting by '. ')
+    const previewContent =
+        content.split('. ').slice(0, 2).join('. ') +
+        (content.split('. ').length > 2 ? '...' : '');
+
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -42,14 +47,22 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
             <p className="text-sm text-gray-500 mb-4 italic mt-2">
                 {date} · {readTime} min read
             </p>
-            <p className="text-lg">{content}</p>
+            <p className="text-lg">
+                {previewContent}{' '}
+                <span
+                    className="text-blue-500 cursor-pointer"
+                    onClick={openModal}
+                >
+                    Show More...
+                </span>
+            </p>
 
             {isModalOpen && (
                 <div
                     className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50"
                     onClick={handleOverlayClick}
                 >
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-3/4 max-w-2xl">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-3/4 max-w-2xl max-h-[80vh] overflow-y-auto relative">
                         <button
                             className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                             onClick={closeModal}
@@ -72,7 +85,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
                         <p className="text-sm text-gray-500 mb-4 italic mt-2">
                             {date} · {readTime} min read
                         </p>
-                        <p className="text-lg">{content}</p>
+                        {content.split('\n').map((para, idx) => (
+                            <p key={idx} className="text-lg mb-4">
+                                {para}
+                            </p>
+                        ))}
                     </div>
                 </div>
             )}

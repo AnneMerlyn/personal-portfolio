@@ -26,7 +26,6 @@ const AboutMe: React.FC = () => {
                     <FontAwesomeIcon icon={faCogs} className="mr-2" /> Skills:
                 </h4>
                 <ul className="flex flex-wrap gap-2 mt-2">
-                    {/* Replace with your actual skills */}
                     <li className="bg-pink-200 text-pink-500 dark:text-pink-400 px-2 py-1 rounded shadow-lg">
                         React
                     </li>
@@ -43,7 +42,6 @@ const AboutMe: React.FC = () => {
                     Notable Experience:
                 </h4>
                 <ul className="list-disc list-inside mt-2 font-serif">
-                    {/* Replace with your actual experiences */}
                     <li className="text-gray-600 dark:text-gray-300">
                         Associate Software Engineer II at OPTUM
                     </li>
@@ -73,7 +71,6 @@ const AboutMe: React.FC = () => {
                 </h4>
 
                 <ul className="list-disc list-inside mt-2 font-serif">
-                    {/* Replace with languages you speak and your proficiency */}
                     <li className="text-gray-600 dark:text-gray-300">
                         English - Fluent
                     </li>
