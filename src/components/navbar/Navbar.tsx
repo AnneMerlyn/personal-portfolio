@@ -1,15 +1,8 @@
 import React from 'react';
+import { useRef, useEffect } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { MobileNavButton } from '@/components/navbar/MobileNavButton';
-
-type NavBarProps = {
-    darkMode: boolean;
-    setDarkMode: (value: boolean) => void;
-    activeTab: string;
-    setActiveTab: (value: string) => void;
-    mobileNavOpen: boolean;
-    setMobileNavOpen: (value: boolean) => void;
-};
+import { NavBarProps } from '@/types';
 
 export const NavBar: React.FC<NavBarProps> = ({
     darkMode,
@@ -19,6 +12,25 @@ export const NavBar: React.FC<NavBarProps> = ({
     mobileNavOpen,
     setMobileNavOpen,
 }) => {
+    const mobileNavRef = useRef(null);
+
+    useEffect(() => {
+        const handleDocumentClick = (event) => {
+            if (
+                mobileNavOpen &&
+                mobileNavRef.current &&
+                !mobileNavRef.current.contains(event.target)
+            ) {
+                setMobileNavOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleDocumentClick);
+
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    }, [mobileNavOpen, setMobileNavOpen]);
     return (
         <div className="sticky top-0 z-50 bg-white dark:bg-gray-900 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md">
             <nav className="py-4 mb-0 md:py-4 md:mb-2 flex justify-between dark:text-white">
@@ -40,7 +52,10 @@ export const NavBar: React.FC<NavBarProps> = ({
                         </a>
                     </div>
                     {mobileNavOpen && (
-                        <div className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col">
+                        <div
+                            ref={mobileNavRef}
+                            className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col"
+                        >
                             <div className="flex flex-col gap-1">
                                 <a
                                     href="#home"

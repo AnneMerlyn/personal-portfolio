@@ -1,14 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
-import { StaticImageData } from 'next/image';
-
-type ProfileProps = {
-    imageSrc: StaticImageData;
-    name: string;
-    jobTitle: string;
-    description: string;
-};
+import { ProfileProps } from '@/types';
 
 const Profile: React.FC<ProfileProps> = ({
     imageSrc,

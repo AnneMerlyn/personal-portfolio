@@ -1,6 +1,4 @@
-type MobileNavButtonProps = {
-    onClick: () => void;
-};
+import { MobileNavButtonProps } from '@/types';
 
 export const MobileNavButton: React.FC<MobileNavButtonProps> = ({
     onClick,

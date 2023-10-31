@@ -1,12 +1,7 @@
 import React from 'react';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { FaWordpress } from 'react-icons/fa';
-
-type SocialLinkProps = {
-    linkedin: string;
-    github: string;
-    wordpress: string;
-};
+import { SocialLinkProps } from '@/types';
 
 const SocialLinks: React.FC<SocialLinkProps> = ({
     linkedin,
