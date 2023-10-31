@@ -7,8 +7,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
 
     // Get the first two sentences (splitting by '. ')
     const previewContent =
-        content.split('. ').slice(0, 2).join('. ') +
-        (content.split('. ').length > 2 ? '...' : '');
+        content
+            .split(/[.?]\s+/)
+            .slice(0, 2)
+            .join('. ') + (content.split(/[.?]\s+/).length > 2 ? '...' : '');
 
     const openModal = () => {
         setIsModalOpen(true);
