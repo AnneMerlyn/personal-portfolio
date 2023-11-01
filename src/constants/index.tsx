@@ -1,3 +1,5 @@
+import proj1 from '../../public/projectone.jpeg';
+
 export const blogPosts = [
     {
         id: 1,
@@ -63,5 +65,80 @@ export const blogPosts = [
             'In the grand tapestry of web design tools, Tailwind CSS is a vibrant thread. It brings to the table a fresh perspective, challenging conventional design norms. But, like every tool, it’s essential to gauge its fit. It’s not a one-size-fits-all solution but a unique offering in the developer’s arsenal. By weighing its innovative approach against its potential challenges, developers can discern if Tailwind is the wind beneath their project’s wings or a gust that might steer them off course.',
         date: 'October 06, 2023',
         tags: ['Tailwind CSS', 'Styling', 'Web Design'],
+    },
+];
+
+export const skills = [
+    { skill: 'React', proficiency: 80 },
+    { skill: 'C#', proficiency: 90 },
+];
+
+export const languages = [
+    { language: 'English', proficiency: 'Fluent', flag: 'us' },
+    { language: 'Deutsch', proficiency: 'Beginner', flag: 'de' },
+];
+
+export const projects = [
+    {
+        name: 'Project One',
+        description: 'This is a brief description of Project One.',
+        imageSrc: proj1,
+        technologies: ['React', 'Node.js'],
+        liveDemoLink: 'https://project-one.com',
+        githubRepoLink: 'https://github.com/project-one',
+    },
+    {
+        name: 'Project Two',
+        description: 'This is a brief description of Project Two.',
+        imageSrc: proj1,
+        technologies: ['Angular', 'Firebase'],
+        liveDemoLink: 'https://project-two.com',
+        githubRepoLink: 'https://github.com/project-two',
+    },
+];
+
+export const experiences = [
+    {
+        title: 'Associate Software Engineer II',
+        company: 'Optum',
+        duration: 'May 2019 - June 2013',
+    },
+    {
+        title: 'Software Engineer II',
+        company: 'Kyocera',
+        duration: 'April 2016 - April 2019',
+    },
+];
+
+export const personalInterestsData = [
+    {
+        title: 'Sunset at Santorini',
+        description:
+            'Captured the breathtaking sunset at Oia, Santorini. The array of colors reflecting off the white buildings was a sight to behold.',
+        imageSrc: proj1,
+    },
+    {
+        title: 'Hiking in the Swiss Alps',
+        description:
+            'Conquered the trails of the Swiss Alps. The panoramic views from the peak were worth every step.',
+        imageSrc: proj1,
+    },
+    {
+        title: 'Cherry Blossoms in Japan',
+        description:
+            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
+        imageSrc: proj1,
+    },
+    {
+        title: 'Cherry Blossoms in Japan',
+        description:
+            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
+        imageSrc: proj1,
+    },
+    {
+        title: 'Cherry Blossoms in Japan',
+        description:
+            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
+        imageSrc: proj1,
     },
 ];

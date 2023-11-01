@@ -1,24 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import { StaticImageData } from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-interface Project {
-    name: string;
-    description: string;
-    imageSrc: StaticImageData;
-    technologies: string[];
-    liveDemoLink: string;
-    githubRepoLink: string;
-}
-
-interface ProjectCarouselProps {
-    projects: Project[];
-}
+import { ProjectCarouselProps } from '@/types';
 
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
     return (
@@ -28,29 +15,31 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            className="mySwiper mx-2 border-2 border-pink-500 dark:border-pink-400 shadow-lg"
+            className="mx-2 shadow-lg"
         >
             {projects.map((project, index) => (
-                <SwiperSlide key={index}>
-                    <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-                        <div className="md:w-1/2">
+                <SwiperSlide key={index} className="p-4">
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-16 mx-auto mb-6">
+                        <div className="flex-shrink-0 w-full md:w-1/2">
                             <Image
                                 src={project.imageSrc}
+                                className="rounded"
                                 layout="responsive"
                                 objectFit="contain"
-                                width={1000} // Adjust width as needed
-                                height={700} // Adjust height as needed
+                                width={1200}
+                                height={800}
                                 alt={project.name}
                             />
                         </div>
-                        <div className="md:w-1/2">
+
+                        <div className="w-full md:w-1/2">
                             <h5 className="font-semibold text-gray-600 dark:text-gray-300">
                                 {project.name}
                             </h5>
                             <p className="text-gray-600 dark:text-gray-300 font-serif">
                                 {project.description}
                             </p>
-                            <div className="flex flex-wrap space-x-2 mt-2">
+                            <div className="flex flex-wrap gap-2 mt-2">
                                 {project.technologies.map((tech, idx) => (
                                     <span
                                         key={idx}
@@ -60,7 +49,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
                                     </span>
                                 ))}
                             </div>
-                            <div className="flex space-x-2 mt-2">
+                            <div className="flex gap-2 mt-2">
                                 <a
                                     href={project.liveDemoLink}
                                     className="text-pink-500 dark:text-pink-400 hover:underline"

@@ -14,6 +14,7 @@ export default function Home() {
     const [darkMode, setDarkMode] = React.useState(true);
     const [activeTab, setActiveTab] = React.useState('home');
     const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
+
     const [displayedPosts, setDisplayedPosts] = React.useState(
         blogPosts.slice(0, 2)
     ); // Initially showing the first 2 posts

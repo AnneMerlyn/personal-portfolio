@@ -32,7 +32,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, proficiency }) => {
                     {skill}
                 </span>
             </div>
-            <div className="w-1/2 md:w-1/4 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div className="w-full md:w-3/4 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                 <div
                     className={`bg-pink-500 h-2.5 rounded-full transition-all duration-1000 ease-in-out ${
                         isVisible ? 'w-full' : 'w-0'

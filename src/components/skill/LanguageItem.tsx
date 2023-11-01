@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface LanguageItemProps {
-    language: string;
-    proficiency: string;
-    flag: string; // Assuming this is a URL to an image of the flag
-}
+import { LanguageItemProps } from '@/types';
 
 const LanguageItem: React.FC<LanguageItemProps> = ({
     language,

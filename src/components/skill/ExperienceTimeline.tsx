@@ -1,24 +1,11 @@
 import React from 'react';
-
-interface Experience {
-    title: string;
-    company: string;
-    duration: string;
-}
-
-interface ExperienceTimelineProps {
-    experiences: Experience[];
-}
+import { ExperienceTimelineProps } from '@/types';
 
 const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
     experiences,
 }) => {
     return (
         <div className="experience-timeline mt-4">
-            <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                {/* Icon and Title */}
-                Notable Experience:
-            </h4>
             <ul className="list-disc list-inside mt-2 font-serif">
                 {experiences.map((experience, index) => (
                     <li
