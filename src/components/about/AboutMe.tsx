@@ -7,9 +7,46 @@ import {
     faGlobeAmericas,
     faLaptopCode,
 } from '@fortawesome/free-solid-svg-icons';
+import SkillBar from '@/components/skill/SkillBar';
+import ProjectCarousel from '@/components/project/ProjectCarousel';
+import LanguageItem from '@/components/skill/LanguageItem';
+import ExperienceTimeline from '@/components/skill/ExperienceTimeline';
 import '../../styles/customStyles.css';
+import proj1 from '../../../public/projectone.jpeg';
 
 const AboutMe: React.FC = () => {
+    const skills = [
+        { skill: 'React', proficiency: 90 },
+        { skill: 'Node.js', proficiency: 80 },
+        // Add more skills here
+    ];
+
+    const languages = [
+        { language: 'English', proficiency: 'Fluent', flag: 'us' },
+        { language: 'Deutsch', proficiency: 'Beginner', flag: 'de' },
+        // Add more languages here
+    ];
+
+    const projects = [
+        {
+            name: 'Project One',
+            description: 'This is a brief description of Project One.',
+            imageSrc: proj1,
+            technologies: ['React', 'Node.js'], // Add relevant technologies
+            liveDemoLink: 'https://project-one.com',
+            githubRepoLink: 'https://github.com/project-one',
+        },
+        {
+            name: 'Project Two',
+            description: 'This is a brief description of Project Two.',
+            imageSrc: proj1,
+            technologies: ['Angular', 'Firebase'], // Add relevant technologies
+            liveDemoLink: 'https://project-two.com',
+            githubRepoLink: 'https://github.com/project-two',
+        },
+        // Add more projects here
+    ];
+
     return (
         <div className="about-me-section pt-0 md:p-4 mt-0">
             {/* Personal Background */}
@@ -25,31 +62,17 @@ const AboutMe: React.FC = () => {
                 <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
                     <FontAwesomeIcon icon={faCogs} className="mr-2" /> Skills:
                 </h4>
-                <ul className="flex flex-wrap gap-2 mt-2">
-                    <li className="bg-pink-200 text-pink-500 dark:text-pink-400 px-2 py-1 rounded shadow-lg">
-                        React
-                    </li>
-                    <li className="bg-pink-200 text-pink-500 dark:text-pink-400 px-2 py-1 rounded shadow-lg">
-                        Node.js
-                    </li>
-                </ul>
+                {skills.map((skill, index) => (
+                    <SkillBar
+                        key={index}
+                        skill={skill.skill}
+                        proficiency={skill.proficiency}
+                    />
+                ))}
             </div>
 
             {/* Professional Experience */}
-            <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                    <FontAwesomeIcon icon={faBriefcase} className="mr-2" />{' '}
-                    Notable Experience:
-                </h4>
-                <ul className="list-disc list-inside mt-2 font-serif">
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Associate Software Engineer II at OPTUM
-                    </li>
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Software Engineer 1 at Kyocera
-                    </li>
-                </ul>
-            </div>
+            {/* <ExperienceTimeline /> */}
 
             {/* Personal Interests */}
             <div className="mt-4">
@@ -69,66 +92,26 @@ const AboutMe: React.FC = () => {
                     <FontAwesomeIcon icon={faGlobeAmericas} className="mr-2" />{' '}
                     Languages Spoken:
                 </h4>
-
-                <ul className="list-disc list-inside mt-2 font-serif">
-                    <li className="text-gray-600 dark:text-gray-300">
-                        English - Fluent
-                    </li>
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Deutsch - Beginner
-                    </li>
-                </ul>
+                {languages.map((language, index) => (
+                    <LanguageItem
+                        key={index}
+                        language={language.language}
+                        proficiency={language.proficiency}
+                        flag={language.flag}
+                    />
+                ))}
             </div>
 
-            {/*TBD*/}
             {/* Personal Projects */}
-            {/* <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
+            <div className="mt-4 flex flex-col w-full">
+                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400 mb-4">
                     <FontAwesomeIcon icon={faLaptopCode} className="mr-2" />{' '}
                     Personal Projects:
                 </h4>
-
-                <div className="mt-2">
-                    <div className="project-card mt-4">
-                        <img
-                            src="[Path_to_project_image]"
-                            alt="[Project Name]"
-                            className="w-full rounded shadow-md"
-                        />
-                        <h5 className="font-semibold mt-2  text-gray-600 dark:text-gray-300">
-                            [Project Name]
-                        </h5>
-                        <p className="text-gray-600 dark:text-gray-300 font-serif mt-1">
-                            [Short description of the project, technologies
-                            used, the problem it solves, etc.]
-                        </p>
-
-                        <div className="mt-2 flex space-x-2">
-                            <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">
-                                React
-                            </span>
-                            <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">
-                                Node.js
-                            </span>
-                        </div>
-
-                        <div className="mt-2 flex space-x-2">
-                            <a
-                                href="[Live_Demo_Link]"
-                                className="text-pink-500 dark:text-pink-400 hover:underline"
-                            >
-                                Live Demo
-                            </a>
-                            <a
-                                href="[GitHub_Repo_Link]"
-                                className="text-pink-500 dark:text-pink-400 hover:underline"
-                            >
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
+                <div className="flex justify-center items-center">
+                    <ProjectCarousel projects={projects} />
                 </div>
-            </div> */}
+            </div>
 
             {/* CTA */}
             <div className="mt-8">
