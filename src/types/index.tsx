@@ -28,9 +28,9 @@ export type ProfileProps = {
 };
 
 export type SocialLinkProps = {
-    linkedin: string;
+    // linkedin: string;
     github: string;
-    wordpress: string;
+    // wordpress: string;
 };
 
 export type LanguageItemProps = {

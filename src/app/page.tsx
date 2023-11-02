@@ -1,7 +1,7 @@
 'use client';
 
 import devan from '../../public/profile.jpeg';
-import React from 'react';
+import React, { useState } from 'react'; // Use destructuring for useState
 import '../styles/customStyles.css';
 import NavBar from '@/components/navbar/Navbar';
 import Profile from '@/components/profile/Profile';
@@ -11,13 +11,11 @@ import { blogPosts } from '@/constants';
 import AboutMe from '@/components/about/AboutMe';
 
 export default function Home() {
-    const [darkMode, setDarkMode] = React.useState(true);
-    const [activeTab, setActiveTab] = React.useState('home');
-    const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
-
-    const [displayedPosts, setDisplayedPosts] = React.useState(
-        blogPosts.slice(0, 2)
-    ); // Initially showing the first 2 posts
+    // Use destructuring for useState
+    const [darkMode, setDarkMode] = useState(true);
+    const [activeTab, setActiveTab] = useState('home');
+    const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    const [displayedPosts, setDisplayedPosts] = useState(blogPosts.slice(0, 2));
 
     const loadMorePosts = () => {
         const nextPosts = blogPosts.slice(
@@ -41,7 +39,6 @@ export default function Home() {
                     />
                     {activeTab === 'home' && (
                         <>
-                            {' '}
                             <Profile
                                 imageSrc={devan}
                                 name="Anne Martinez"
@@ -52,11 +49,6 @@ export default function Home() {
                                     areas, especially with C# and React. Although I
                                     have learned a lot, I am continually eager to
                                     dive into new areas and expand my skills. ... always up for a chat or a new challenge."
-                            />
-                            <SocialLinks
-                                linkedin="https://www.linkedin.com/in/anne-merlyn-martinez/"
-                                github="https://github.com/AnneMerlyn"
-                                wordpress="https://your-wordpress-site-url.com"
                             />
                         </>
                     )}
@@ -71,8 +63,7 @@ export default function Home() {
                                     tags={post.tags}
                                 />
                             ))}
-
-                            {displayedPosts.length < blogPosts.length && ( // Condition to check if there are more posts
+                            {displayedPosts.length < blogPosts.length && (
                                 <button
                                     onClick={loadMorePosts}
                                     className="bg-pink-500 text-white py-2 px-4 rounded-full mt-6 hover:bg-pink-600 transition-colors duration-300"
@@ -87,6 +78,14 @@ export default function Home() {
                             <AboutMe />
                         </div>
                     )}
+
+                    <div className="mt-10 text-center">
+                        <SocialLinks
+                            // linkedin="https://www.linkedin.com/in/anne-merlyn-martinez/"
+                            github="https://github.com/AnneMerlyn"
+                            // wordpress="https://your-wordpress-site-url.com"
+                        />
+                    </div>
                 </section>
             </main>
         </div>
