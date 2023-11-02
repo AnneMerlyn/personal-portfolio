@@ -15,7 +15,7 @@ export const NavBar: React.FC<NavBarProps> = ({
     const mobileNavRef = useRef(null);
 
     useEffect(() => {
-        const handleDocumentClick = (event) => {
+        const handleDocumentClick = (event: { target: any }) => {
             if (
                 mobileNavOpen &&
                 mobileNavRef.current &&
@@ -46,7 +46,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                         ></BsFillMoonStarsFill>
                         <a
                             className="bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4"
-                            href="#"
+                            href="#contact"
+                            onClick={() => setActiveTab('contact')}
                         >
                             Hire Me
                         </a>
@@ -141,7 +142,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                     <li>
                         <a
                             className="bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4"
-                            href="#"
+                            href="#contact"
+                            onClick={() => setActiveTab('contact')}
                         >
                             Hire Me
                         </a>

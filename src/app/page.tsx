@@ -9,6 +9,7 @@ import SocialLinks from '@/components/social/SocialLinks';
 import BlogPost from '@/components/blog/BlogPost';
 import { blogPosts } from '@/constants';
 import AboutMe from '@/components/about/AboutMe';
+import Contact from '@/components/contact/Contact';
 
 export default function Home() {
     // Use destructuring for useState
@@ -75,7 +76,12 @@ export default function Home() {
                     )}
                     {activeTab === 'about' && (
                         <div className="py-1 md:py-10">
-                            <AboutMe />
+                            <AboutMe setActiveTab={setActiveTab} />
+                        </div>
+                    )}
+                    {activeTab === 'contact' && (
+                        <div className="py-1 md:py-10">
+                            <Contact />
                         </div>
                     )}
 
