@@ -32,3 +32,42 @@ export type SocialLinkProps = {
     github: string;
     wordpress: string;
 };
+
+export type LanguageItemProps = {
+    language: string;
+    proficiency: string;
+    flag: string;
+};
+
+type Project = {
+    name: string;
+    description: string;
+    imageSrc: StaticImageData;
+    technologies: string[];
+    liveDemoLink: string;
+    githubRepoLink: string;
+};
+
+export type ProjectCarouselProps = {
+    projects: Project[];
+};
+
+type PersonalInterest = {
+    title: string;
+    description: string;
+    imageSrc: StaticImageData;
+};
+
+export type PersonalInterestProps = {
+    personalInterests: PersonalInterest[];
+};
+
+type Experience = {
+    title: string;
+    company: string;
+    duration: string;
+};
+
+export type ExperienceTimelineProps = {
+    experiences: Experience[];
+};

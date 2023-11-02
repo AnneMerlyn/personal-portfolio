@@ -18,6 +18,10 @@ const config: Config = {
                 burtons: 'burtons',
                 poppins: ['Poppins', 'sans-serif'],
             },
+            colors: {
+                linkedinBlue: '#0077B5', // LinkedIn blue color
+                linkedinDark: '#005582', // A darker shade for hover state
+            },
         },
     },
     plugins: [],

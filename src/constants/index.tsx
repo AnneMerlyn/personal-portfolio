@@ -1,3 +1,10 @@
+import proj1 from '../../public/projectone.jpeg';
+import boracay from '../../public/boracay.jpeg';
+import heidelberg from '../../public/heidelberg.jpg';
+import pulag from '../../public/pulag.jpg';
+import bruchsal from '../../public/bruchsal.png';
+import taiwan from '../../public/taiwan.jpeg';
+
 export const blogPosts = [
     {
         id: 1,
@@ -63,5 +70,80 @@ export const blogPosts = [
             'In the grand tapestry of web design tools, Tailwind CSS is a vibrant thread. It brings to the table a fresh perspective, challenging conventional design norms. But, like every tool, it’s essential to gauge its fit. It’s not a one-size-fits-all solution but a unique offering in the developer’s arsenal. By weighing its innovative approach against its potential challenges, developers can discern if Tailwind is the wind beneath their project’s wings or a gust that might steer them off course.',
         date: 'October 06, 2023',
         tags: ['Tailwind CSS', 'Styling', 'Web Design'],
+    },
+];
+
+export const skills = [
+    { skill: 'React', proficiency: 80 },
+    { skill: 'C#', proficiency: 90 },
+];
+
+export const languages = [
+    { language: 'English', proficiency: 'Fluent', flag: 'us' },
+    { language: 'Deutsch', proficiency: 'Beginner', flag: 'de' },
+];
+
+export const projects = [
+    {
+        name: 'Project One',
+        description: 'This is a brief description of Project One.',
+        imageSrc: proj1,
+        technologies: ['React', 'Node.js'],
+        liveDemoLink: 'https://project-one.com',
+        githubRepoLink: 'https://github.com/project-one',
+    },
+    {
+        name: 'Project Two',
+        description: 'This is a brief description of Project Two.',
+        imageSrc: proj1,
+        technologies: ['Angular', 'Firebase'],
+        liveDemoLink: 'https://project-two.com',
+        githubRepoLink: 'https://github.com/project-two',
+    },
+];
+
+export const experiences = [
+    {
+        title: 'Associate Software Engineer II',
+        company: 'Optum',
+        duration: 'May 2019 - June 2013',
+    },
+    {
+        title: 'Software Engineer II',
+        company: 'Kyocera',
+        duration: 'April 2016 - April 2019',
+    },
+];
+
+export const personalInterestsData = [
+    {
+        title: 'Sunset at Boracay',
+        description:
+            'As the sun dipped below the horizon in Boracay, the sky transformed into a canvas of fiery oranges and so much more, reflected in the serene waters. This daily spectacle paints a moment of tranquil beauty unique to this tropical paradise.',
+        imageSrc: boracay,
+    },
+    {
+        title: 'Hiking in Mt Pulag',
+        description:
+            'Enduring the steep climbs of Mt. Pulag tested every ounce of stamina and determination. However, upon reaching the summit, the expansive, awe-inspiring views provided a soul-soothing reward, making every challenging step of the trek undeniably worth it.',
+        imageSrc: pulag,
+    },
+    {
+        title: 'Heidelberg Altstadt',
+        description:
+            'Gazing down from Heidelberg Castle, the Altstadt unfurls as a tapestry of Renaissance and Gothic buildings, leading to the Neckar River where the storied Old Bridge stitches the banks together, all set against the lush Odenwald—a perfect portrait of European romanticism.',
+        imageSrc: heidelberg,
+    },
+    {
+        title: 'Flower Garden in Taiwan',
+        description:
+            'A visual feast for the senses, this enchanting oasis captivates with its vibrant spectrum of flowers. Each turn reveals dreamy backdrops and imaginative props, inviting visitors into a world where every nook is a picturesque scene waiting to be captured.',
+        imageSrc: taiwan,
+    },
+    {
+        title: 'Bruchsal Castle',
+        description:
+            'A Harmony of Elegance and History - Bruchsal Castle showcases Germany&apos;s legacy through its graceful design and fine sculptures. Its fresco-adorned interiors and the seamless blend with nature craft a serene yet culturally enriched experience.',
+        imageSrc: bruchsal,
     },
 ];

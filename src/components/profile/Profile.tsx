@@ -17,6 +17,7 @@ const Profile: React.FC<ProfileProps> = ({
                     layout="fill"
                     objectFit="cover"
                     alt={name}
+                    sizes="(max-width: 768px) 40vw, 64vw"
                 />
             </div>
             <div className="flex-grow text-center md:text-left space-y-5 mt-6 md:mt-0">

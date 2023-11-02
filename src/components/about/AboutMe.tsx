@@ -7,130 +7,130 @@ import {
     faGlobeAmericas,
     faLaptopCode,
 } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+import SkillBar from '@/components/skill/SkillBar';
+import ProjectCarousel from '@/components/common/Carousel/ProjectList';
+import PersonalInterestCarousel from '@/components/common/Carousel/PersonalInterest';
+import LanguageItem from '@/components/skill/LanguageItem';
+import ExperienceTimeline from '@/components/skill/ExperienceTimeline';
 import '../../styles/customStyles.css';
+import {
+    skills,
+    languages,
+    projects,
+    experiences,
+    personalInterestsData,
+} from '@/constants';
 
 const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section pt-0 md:p-4 mt-0">
-            {/* Personal Background */}
+            <div className="text-center mb-8">
+                <h1 className="text-3xl font-bold text-pink-600 dark:text-pink-600">
+                    A little something about me
+                </h1>
+            </div>
+
             <p className="text-gray-600 dark:text-gray-300 font-serif transition-font">
-                I am originally from the Philippines but currently work remotely
-                based in Germany. When I&apos;m not engrossed in coding, I can
-                often be found at the beach, waiting patiently for the
-                sunset.....
+                Hailing from the vibrant shores of the Philippines, my journey
+                in the tech industry began as a curious endeavor into the world
+                of coding. This curiosity quickly blossomed into a passionate
+                career, leading me to where I am today: a dedicated software
+                developer working remotely from the scenic landscapes of
+                Germany. When I&apos;m not immersed in crafting elegant code
+                solutions, you might find me indulging in my love for
+                photography, capturing the serene sunsets and dynamic cityscapes
+                that inspire my creative side. This balance between technology
+                and art defines who I am, driving me to continuously explore the
+                intersection of functionality and beauty in both my professional
+                and personal life.
             </p>
 
-            {/* Technical Skills */}
-            <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                    <FontAwesomeIcon icon={faCogs} className="mr-2" /> Skills:
-                </h4>
-                <ul className="flex flex-wrap gap-2 mt-2">
-                    <li className="bg-pink-200 text-pink-500 dark:text-pink-400 px-2 py-1 rounded shadow-lg">
-                        React
-                    </li>
-                    <li className="bg-pink-200 text-pink-500 dark:text-pink-400 px-2 py-1 rounded shadow-lg">
-                        Node.js
-                    </li>
-                </ul>
+            <div className="mt-4 flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-6">
+                <div className="flex-1">
+                    <div className="flex justify-between items-center">
+                        <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
+                            <FontAwesomeIcon
+                                icon={faBriefcase}
+                                className="mr-2"
+                            />
+                            Notable Experiences:
+                        </h4>
+                    </div>
+                    <ExperienceTimeline experiences={experiences} />
+                </div>
+
+                <div className="flex-1">
+                    <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
+                        <FontAwesomeIcon icon={faCogs} className="mr-2" />{' '}
+                        Skills:
+                    </h4>
+                    {skills.map((skill, index) => (
+                        <SkillBar
+                            key={index}
+                            skill={skill.skill}
+                            proficiency={skill.proficiency}
+                        />
+                    ))}
+                </div>
+
+                <div className="flex-1">
+                    <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
+                        <FontAwesomeIcon
+                            icon={faGlobeAmericas}
+                            className="mr-2"
+                        />
+                        Languages Spoken:
+                    </h4>
+                    {languages.map((language, index) => (
+                        <LanguageItem
+                            key={index}
+                            language={language.language}
+                            proficiency={language.proficiency}
+                            flag={language.flag}
+                        />
+                    ))}
+                    <a
+                        href="https://www.linkedin.com/in/anne-merlyn-martinez/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="View my LinkedIn profile"
+                        className="inline-flex items-center px-4 py-2 bg-linkedinBlue text-white dark:text-white font-bold rounded-md text-sm shadow-sm hover:bg-linkedinDark transition-all duration-300"
+                    >
+                        <p className=" text-gray-200 dark:text-white">
+                            See more on LinkedIn
+                        </p>
+                        <FontAwesomeIcon
+                            icon={faLinkedin}
+                            className="ml-2 h-5 w-5 text-gray-200 dark:text-white"
+                        />
+                    </a>
+                </div>
             </div>
 
-            {/* Professional Experience */}
-            <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                    <FontAwesomeIcon icon={faBriefcase} className="mr-2" />{' '}
-                    Notable Experience:
-                </h4>
-                <ul className="list-disc list-inside mt-2 font-serif">
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Associate Software Engineer II at OPTUM
-                    </li>
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Software Engineer 1 at Kyocera
-                    </li>
-                </ul>
-            </div>
-
-            {/* Personal Interests */}
-            <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                    <FontAwesomeIcon icon={faBook} className="mr-2" /> Personal
-                    Interests:
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 font-serif mt-2">
-                    Besides coding, I love hiking, capturing nature through my
-                    lens,..
-                </p>
-            </div>
-
-            {/* Languages Spoken */}
-            <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
-                    <FontAwesomeIcon icon={faGlobeAmericas} className="mr-2" />{' '}
-                    Languages Spoken:
-                </h4>
-
-                <ul className="list-disc list-inside mt-2 font-serif">
-                    <li className="text-gray-600 dark:text-gray-300">
-                        English - Fluent
-                    </li>
-                    <li className="text-gray-600 dark:text-gray-300">
-                        Deutsch - Beginner
-                    </li>
-                </ul>
-            </div>
-
-            {/*TBD*/}
-            {/* Personal Projects */}
-            {/* <div className="mt-4">
-                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400">
+            <div className="mt-4 flex flex-col w-full">
+                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400 mb-4">
                     <FontAwesomeIcon icon={faLaptopCode} className="mr-2" />{' '}
                     Personal Projects:
                 </h4>
-
-                <div className="mt-2">
-                    <div className="project-card mt-4">
-                        <img
-                            src="[Path_to_project_image]"
-                            alt="[Project Name]"
-                            className="w-full rounded shadow-md"
-                        />
-                        <h5 className="font-semibold mt-2  text-gray-600 dark:text-gray-300">
-                            [Project Name]
-                        </h5>
-                        <p className="text-gray-600 dark:text-gray-300 font-serif mt-1">
-                            [Short description of the project, technologies
-                            used, the problem it solves, etc.]
-                        </p>
-
-                        <div className="mt-2 flex space-x-2">
-                            <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">
-                                React
-                            </span>
-                            <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">
-                                Node.js
-                            </span>
-                        </div>
-
-                        <div className="mt-2 flex space-x-2">
-                            <a
-                                href="[Live_Demo_Link]"
-                                className="text-pink-500 dark:text-pink-400 hover:underline"
-                            >
-                                Live Demo
-                            </a>
-                            <a
-                                href="[GitHub_Repo_Link]"
-                                className="text-pink-500 dark:text-pink-400 hover:underline"
-                            >
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
+                <div className="flex justify-center items-center">
+                    <ProjectCarousel projects={projects} />
                 </div>
-            </div> */}
+            </div>
 
-            {/* CTA */}
+            <div className="mt-4 flex flex-col w-full">
+                <h4 className="font-bold text-lg text-pink-500 dark:text-pink-400 mb-4">
+                    <FontAwesomeIcon icon={faBook} className="mr-2" /> Personal
+                    Interests:
+                </h4>
+                <div className="flex justify-center items-center">
+                    <PersonalInterestCarousel
+                        personalInterests={personalInterestsData}
+                    />
+                </div>
+            </div>
+
             <div className="mt-8">
                 <a
                     href="[Link to your Resume or Contact Form]"
