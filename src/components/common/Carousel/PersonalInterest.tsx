@@ -46,6 +46,7 @@ const PersonalInterest: React.FC<PersonalInterestProps> = ({
                                 className="rounded-t"
                                 layout="fill"
                                 objectFit="cover"
+                                objectPosition="bottom" // You can adjust this to 'top', 'bottom', 'center', etc., as needed
                                 alt={interest.title}
                             />
                         </div>

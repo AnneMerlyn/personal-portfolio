@@ -1,4 +1,9 @@
 import proj1 from '../../public/projectone.jpeg';
+import boracay from '../../public/boracay.jpeg';
+import heidelberg from '../../public/heidelberg.jpg';
+import pulag from '../../public/pulag.jpg';
+import bruchsal from '../../public/bruchsal.png';
+import taiwan from '../../public/taiwan.jpeg';
 
 export const blogPosts = [
     {
@@ -112,33 +117,33 @@ export const experiences = [
 
 export const personalInterestsData = [
     {
-        title: 'Sunset at Santorini',
+        title: 'Sunset at Boracay',
         description:
-            'Captured the breathtaking sunset at Oia, Santorini. The array of colors reflecting off the white buildings was a sight to behold.',
-        imageSrc: proj1,
+            'As the sun dipped below the horizon in Boracay, the sky transformed into a canvas of fiery oranges and so much more, reflected in the serene waters. This daily spectacle paints a moment of tranquil beauty unique to this tropical paradise.',
+        imageSrc: boracay,
     },
     {
-        title: 'Hiking in the Swiss Alps',
+        title: 'Hiking in Mt Pulag',
         description:
-            'Conquered the trails of the Swiss Alps. The panoramic views from the peak were worth every step.',
-        imageSrc: proj1,
+            'Enduring the steep climbs of Mt. Pulag tested every ounce of stamina and determination. However, upon reaching the summit, the expansive, awe-inspiring views provided a soul-soothing reward, making every challenging step of the trek undeniably worth it.',
+        imageSrc: pulag,
     },
     {
-        title: 'Cherry Blossoms in Japan',
+        title: 'Heidelberg Altstadt',
         description:
-            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
-        imageSrc: proj1,
+            'Gazing down from Heidelberg Castle, the Altstadt unfurls as a tapestry of Renaissance and Gothic buildings, leading to the Neckar River where the storied Old Bridge stitches the banks together, all set against the lush Odenwald—a perfect portrait of European romanticism.',
+        imageSrc: heidelberg,
     },
     {
-        title: 'Cherry Blossoms in Japan',
+        title: 'Flower Garden in Taiwan',
         description:
-            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
-        imageSrc: proj1,
+            'A visual feast for the senses, this enchanting oasis captivates with its vibrant spectrum of flowers. Each turn reveals dreamy backdrops and imaginative props, inviting visitors into a world where every nook is a picturesque scene waiting to be captured.',
+        imageSrc: taiwan,
     },
     {
-        title: 'Cherry Blossoms in Japan',
+        title: 'Bruchsal Castle',
         description:
-            'Experienced the serene beauty of cherry blossoms in Kyoto. The delicate pink flowers against the ancient temples was a perfect blend of nature and history.',
-        imageSrc: proj1,
+            'A Harmony of Elegance and History - Bruchsal Castle showcases Germany&apos;s legacy through its graceful design and fine sculptures. Its fresco-adorned interiors and the seamless blend with nature craft a serene yet culturally enriched experience.',
+        imageSrc: bruchsal,
     },
 ];

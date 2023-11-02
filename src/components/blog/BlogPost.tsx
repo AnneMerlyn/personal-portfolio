@@ -31,7 +31,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
     return (
         <div className="p-4 mb-6 border rounded shadow-sm hover:shadow-md transition-shadow duration-300">
             <h2
-                className="text-2xl font-bold mb-2 text-pink-600 cursor-pointer"
+                className="text-2xl font-bold mb-2 text-pink-600 dark:text-pink-600 cursor-pointer"
                 onClick={openModal}
             >
                 {title}
@@ -46,10 +46,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
                     </span>
                 ))}
             </div>
-            <p className="text-sm text-gray-500 mb-4 italic mt-2">
+            <p className="text-sm text-gray-500 dark:text-gray-500 mb-4 italic mt-2">
                 {date} · {readTime} min read
             </p>
-            <p className="text-lg">
+            <p className="text-lg text-gray-900 dark:text-white">
                 {previewContent}{' '}
                 <span
                     className="text-blue-500 cursor-pointer"
@@ -88,7 +88,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, date, tags }) => {
                             {date} · {readTime} min read
                         </p>
                         {content.split('\n').map((para, idx) => (
-                            <p key={idx} className="text-lg mb-4">
+                            <p
+                                key={idx}
+                                className="text-lg mb-4 text-gray-900 dark:text-white"
+                            >
                                 {para}
                             </p>
                         ))}

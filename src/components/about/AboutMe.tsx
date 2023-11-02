@@ -27,7 +27,7 @@ const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section pt-0 md:p-4 mt-0">
             <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
+                <h1 className="text-3xl font-bold text-pink-600 dark:text-pink-600">
                     A little something about me
                 </h1>
             </div>
