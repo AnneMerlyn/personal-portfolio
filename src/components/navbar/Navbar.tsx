@@ -57,35 +57,35 @@ export const NavBar: React.FC<NavBarProps> = ({
                     {mobileNavOpen && (
                         <div
                             ref={mobileNavRef}
-                            className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col"
+                            className="absolute top-16 left-0 w-full bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col"
                         >
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col text-center gap-1">
                                 <Link
                                     href="/"
-                                    className={`text-lg font-burtons dark:text-white text-pink-500 ${
+                                    className={`text-lg font-burtons dark:text-white hover:rounded hover:bg-pink-400 ${
                                         pathname === '/'
-                                            ? 'font-bold border-b-2 border-pink-600'
-                                            : ''
+                                            ? 'font-bold bg-pink-500 rounded text-white'
+                                            : 'text-pink-500 hover:text-white'
                                     }`}
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     href="/blog"
-                                    className={`text-lg font-burtons dark:text-white text-pink-500 ${
+                                    className={`text-lg font-burtons dark:text-white text-pink-500 hover:rounded hover:bg-pink-400 ${
                                         pathname === '/blog'
-                                            ? 'font-bold border-b-2 border-pink-600'
-                                            : ''
+                                            ? 'font-bold bg-pink-500 rounded text-white'
+                                            : 'text-pink-500 hover:text-white'
                                     }`}
                                 >
                                     Blog
                                 </Link>
                                 <Link
                                     href="/about"
-                                    className={`text-lg font-burtons dark:text-white text-pink-500 ${
+                                    className={`text-lg font-burtons dark:text-white text-pink-500 hover:rounded hover:bg-pink-400 ${
                                         pathname === '/about'
-                                            ? 'font-bold border-b-2 border-pink-600'
-                                            : ''
+                                            ? 'font-bold bg-pink-500 rounded text-white'
+                                            : 'text-pink-500 hover:text-white'
                                     }`}
                                 >
                                     About Me
