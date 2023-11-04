@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import NavBar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 export default function BaseLayout({
     children,
@@ -13,7 +14,7 @@ export default function BaseLayout({
 
     return (
         <div className={darkMode ? 'dark' : ''}>
-            <main className="bg-slate-50 px-4 md:px-10 lg:px-40 dark:bg-gray-900 min-h-screen flex flex-col">
+            <div className="bg-slate-50 px-4 md:px-10 lg:px-40 flex flex-col dark:bg-gray-900 min-h-screen">
                 <NavBar
                     darkMode={darkMode}
                     setDarkMode={setDarkMode}
@@ -22,7 +23,9 @@ export default function BaseLayout({
                 />
 
                 {children}
-            </main>
+
+                <Footer github="https://github.com/AnneMerlyn" />
+            </div>
         </div>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 // import { FaWordpress } from 'react-icons/fa';
-import { SocialLinkProps } from '@/types';
+import { FooterProps } from '@/types';
 
-const SocialLinks: React.FC<SocialLinkProps> = ({ github }) => (
-    <div className="flex flex-col items-center justify-center">
+const Footer: React.FC<FooterProps> = ({ github }) => (
+    <footer className="flex flex-col items-center justify-center py-4">
         <div className="flex justify-center items-center gap-4 py-3">
             {/* <a
             href={linkedin}
@@ -38,7 +38,7 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ github }) => (
         <div className="flex items-center justify-center text-center text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-300">
             <span className="font-medium">© 2023</span>
         </div>
-    </div>
+    </footer>
 );
 
-export default SocialLinks;
+export default Footer;

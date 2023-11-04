@@ -3,7 +3,7 @@
 import devan from '../../public/profile.jpeg';
 import '../styles/customStyles.css';
 import Profile from '@/components/profile/Profile';
-import SocialLinks from '@/components/social/SocialLinks';
+import SocialLinks from '@/components/footer/Footer';
 
 export default function Home() {
     return (
@@ -13,21 +13,8 @@ export default function Home() {
                     imageSrc={devan}
                     name="Anne Martinez"
                     jobTitle="Software Developer"
-                    description="I build things with code. I have had the chance
-                                    to work with some great teams. Over time, I have
-                                    picked up skills in both front-end and back-end
-                                    areas, especially with C# and React. Although I
-                                    have learned a lot, I am continually eager to
-                                    dive into new areas and expand my skills. ... always up for a chat or a new challenge."
+                    description="With seven years of working experience, I've built a diverse range of projects with code, teaming up with some truly outstanding groups along the way. My expertise spans across both front-end and back-end domains, especially with C# and React. Yet, despite my experience, my eagerness to learn never wanes—I am always ready to dive into new areas and expand my skill set. Whether it's a stimulating conversation or a fresh challenge, I'm always up for it."
                 />
-
-                <div className="mt-10 text-center">
-                    <SocialLinks
-                        // linkedin="https://www.linkedin.com/in/anne-merlyn-martinez/"
-                        github="https://github.com/AnneMerlyn"
-                        // wordpress="https://your-wordpress-site-url.com"
-                    />
-                </div>
             </section>
         </>
     );

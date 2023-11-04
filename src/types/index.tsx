@@ -25,7 +25,7 @@ export type ProfileProps = {
     description: string;
 };
 
-export type SocialLinkProps = {
+export type FooterProps = {
     // linkedin: string;
     github: string;
     // wordpress: string;
