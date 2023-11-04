@@ -22,9 +22,7 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ github }) => (
                 className="flex items-center gap-2 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
             >
                 <AiFillGithub className="text-2xl md:text-3xl" />
-                <span className="hidden sm:block">
-                    Explore source in GitHub
-                </span>
+                <span className="hidden sm:block">Follow me on GitHub</span>
             </a>
 
             {/* <a
