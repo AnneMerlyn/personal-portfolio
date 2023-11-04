@@ -10,8 +10,6 @@ export type BlogPostProps = {
 export type NavBarProps = {
     darkMode: boolean;
     setDarkMode: (value: boolean) => void;
-    activeTab: string;
-    setActiveTab: (value: string) => void;
     mobileNavOpen: boolean;
     setMobileNavOpen: (value: boolean) => void;
 };

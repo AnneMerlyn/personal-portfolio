@@ -137,7 +137,7 @@ const AboutMe: React.FC = () => {
                     href="/contact"
                     className="bg-pink-500 text-white px-6 py-2 rounded-pill hover:bg-pink-600 transition-all duration-300 shadow-md"
                 >
-                    Let's Connect
+                    Let&apos;s Connect
                 </Link>
             </div>
         </div>

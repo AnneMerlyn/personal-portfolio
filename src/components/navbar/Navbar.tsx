@@ -14,7 +14,7 @@ export const NavBar: React.FC<NavBarProps> = ({
     setMobileNavOpen,
 }) => {
     const pathname = usePathname();
-    const mobileNavRef = useRef(null);
+    const mobileNavRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleDocumentClick = (event: { target: any }) => {
