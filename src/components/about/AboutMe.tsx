@@ -8,7 +8,6 @@ import {
     faLaptopCode,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Contact from '@/components/contact/Contact';
 
 import SkillBar from '@/components/skill/SkillBar';
 import ProjectCarousel from '@/components/common/Carousel/ProjectList';
@@ -23,10 +22,9 @@ import {
     experiences,
     personalInterestsData,
 } from '@/constants';
+import Link from 'next/link';
 
-const AboutMe: React.FC<{ setActiveTab: (tab: string) => void }> = ({
-    setActiveTab,
-}) => {
+const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section pt-0 md:p-4 mt-0">
             <div className="text-center mb-8">
@@ -135,13 +133,12 @@ const AboutMe: React.FC<{ setActiveTab: (tab: string) => void }> = ({
             </div>
 
             <div className="mt-8">
-                <a
+                <Link
+                    href="/contact"
                     className="bg-pink-500 text-white px-6 py-2 rounded-pill hover:bg-pink-600 transition-all duration-300 shadow-md"
-                    href="#contact"
-                    onClick={() => setActiveTab('contact')}
                 >
-                    Let&apos;s Connect
-                </a>
+                    Let's Connect
+                </Link>
             </div>
         </div>
     );

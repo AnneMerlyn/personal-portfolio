@@ -1,17 +1,19 @@
-import React from 'react';
-import { useRef, useEffect } from 'react';
+'use client';
+import React, { useRef } from 'react';
+import { useEffect } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { MobileNavButton } from '@/components/navbar/MobileNavButton';
 import { NavBarProps } from '@/types';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const NavBar: React.FC<NavBarProps> = ({
     darkMode,
     setDarkMode,
-    activeTab,
-    setActiveTab,
     mobileNavOpen,
     setMobileNavOpen,
 }) => {
+    const pathname = usePathname();
     const mobileNavRef = useRef(null);
 
     useEffect(() => {
@@ -31,6 +33,7 @@ export const NavBar: React.FC<NavBarProps> = ({
             document.removeEventListener('click', handleDocumentClick);
         };
     }, [mobileNavOpen, setMobileNavOpen]);
+
     return (
         <div className="sticky top-0 z-50 bg-white dark:bg-gray-900 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md">
             <nav className="py-4 mb-0 md:py-4 md:mb-2 flex justify-between dark:text-white">
@@ -44,13 +47,12 @@ export const NavBar: React.FC<NavBarProps> = ({
                             className="cursor-pointer text-2xl dark:text-white text-gray-800 ml-4"
                             aria-label="Toggle dark mode"
                         ></BsFillMoonStarsFill>
-                        <a
+                        <Link
+                            href="/contact"
                             className="bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4"
-                            href="#contact"
-                            onClick={() => setActiveTab('contact')}
                         >
                             Hire Me
-                        </a>
+                        </Link>
                     </div>
                     {mobileNavOpen && (
                         <div
@@ -58,78 +60,72 @@ export const NavBar: React.FC<NavBarProps> = ({
                             className="absolute top-16 left-0 w-1/3 items-center bg-white dark:bg-gray-800 p-2 rounded border shadow-lg flex flex-col"
                         >
                             <div className="flex flex-col gap-1">
-                                <a
-                                    href="#home"
-                                    onClick={() => setActiveTab('home')}
+                                <Link
+                                    href="/"
                                     className={`text-lg font-burtons dark:text-white text-pink-500 ${
-                                        activeTab === 'home'
+                                        pathname === '/'
                                             ? 'font-bold border-b-2 border-pink-600'
                                             : ''
                                     }`}
                                 >
                                     Home
-                                </a>
-                                <a
-                                    href="#blog"
-                                    onClick={() => setActiveTab('blog')}
+                                </Link>
+                                <Link
+                                    href="/blog"
                                     className={`text-lg font-burtons dark:text-white text-pink-500 ${
-                                        activeTab === 'blog'
+                                        pathname === '/blog'
                                             ? 'font-bold border-b-2 border-pink-600'
                                             : ''
                                     }`}
                                 >
                                     Blog
-                                </a>
-                                <a
-                                    href="#about"
-                                    onClick={() => setActiveTab('about')}
+                                </Link>
+                                <Link
+                                    href="/about"
                                     className={`text-lg font-burtons dark:text-white text-pink-500 ${
-                                        activeTab === 'about'
+                                        pathname === '/about'
                                             ? 'font-bold border-b-2 border-pink-600'
                                             : ''
                                     }`}
                                 >
                                     About Me
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     )}
                 </div>
 
                 <div className="hidden md:flex">
-                    <a
-                        href="#home"
-                        onClick={() => setActiveTab('home')}
+                    <Link
+                        href="/"
                         className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
-                            activeTab === 'home'
+                            pathname === '/'
                                 ? 'font-bold border-b-2 border-pink-600'
                                 : ''
                         }`}
                     >
                         Home
-                    </a>
-                    <a
-                        href="#blog"
-                        onClick={() => setActiveTab('blog')}
+                    </Link>
+                    <Link
+                        href="/blog"
                         className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
-                            activeTab === 'blog'
+                            pathname === '/blog'
                                 ? 'font-bold border-b-2 border-pink-600'
                                 : ''
                         }`}
                     >
                         Blog
-                    </a>
-                    <a
-                        href="#about"
-                        onClick={() => setActiveTab('about')}
+                    </Link>
+                    <Link
+                        href="/about"
                         className={`text-xl font-burtons dark:text-white text-pink-500 mx-4 ${
-                            activeTab === 'about'
+                            pathname === '/about'
                                 ? 'font-bold border-b-2 border-pink-600'
                                 : ''
                         }`}
                     >
                         About Me
-                    </a>
+                    </Link>
                 </div>
                 <ul className="hidden md:flex items-center">
                     <li>
@@ -140,13 +136,16 @@ export const NavBar: React.FC<NavBarProps> = ({
                         ></BsFillMoonStarsFill>
                     </li>
                     <li>
-                        <a
-                            className="bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4"
-                            href="#contact"
-                            onClick={() => setActiveTab('contact')}
+                        <Link
+                            href="/contact"
+                            className={`bg-gradient-to-r from-pink-300 to-violet-300 text-white px-4 py-2 border-none rounded-md ml-4 ${
+                                pathname === '/contact'
+                                    ? 'font-bold border-b-2 border-pink-600'
+                                    : ''
+                            }`}
                         >
                             Hire Me
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
