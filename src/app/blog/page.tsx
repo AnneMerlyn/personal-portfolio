@@ -1,7 +1,6 @@
 'use client';
 import BlogPost from '@/components/blog/BlogPost';
 import { blogPosts } from '@/constants';
-import Head from 'next/head';
 import { useState } from 'react';
 
 export default function BlogPage() {
@@ -17,9 +16,6 @@ export default function BlogPage() {
 
     return (
         <>
-            <Head>
-                <title>Blog</title>
-            </Head>
             <section>
                 {displayedPosts.map((post) => (
                     <BlogPost

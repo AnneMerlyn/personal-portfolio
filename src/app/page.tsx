@@ -1,5 +1,5 @@
 'use client';
-import Head from 'next/head';
+
 import devan from '../../public/profile.jpeg';
 import '../styles/customStyles.css';
 import Profile from '@/components/profile/Profile';
@@ -8,13 +8,6 @@ import SocialLinks from '@/components/social/SocialLinks';
 export default function Home() {
     return (
         <>
-            <Head>
-                <title>Anne Martinez - Software Developer</title>
-                <meta
-                    name="description"
-                    content="Discover the work of Anne Martinez, a software developer committed to building functional and effective digital solutions."
-                />
-            </Head>
             <section className="py-1">
                 <Profile
                     imageSrc={devan}
