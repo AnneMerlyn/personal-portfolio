@@ -5,7 +5,7 @@ export const MobileNavButton: React.FC<MobileNavButtonProps> = ({
 }) => (
     <button
         onClick={onClick}
-        className="bg-pink-500 dark:bg-pink-400 text-white p-2 rounded"
+        className="bg-pink-500 dark:bg-pink-400 text-white py-2 px-4 rounded"
     >
         ☰
     </button>
