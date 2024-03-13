@@ -2,6 +2,7 @@ import BaseLayout from '@/components/layout/BaseLayout';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 
 export const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <BaseLayout>{children}</BaseLayout>
+                <BaseLayout>
+                    {children}
+                    <Analytics />
+                </BaseLayout>
             </body>
         </html>
     );
