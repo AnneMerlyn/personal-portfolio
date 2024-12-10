@@ -106,10 +106,10 @@ export const experiences = [
     {
         title: 'Associate Software Engineer II',
         company: 'Optum',
-        duration: 'May 2019 - June 2013',
+        duration: 'May 2019 - June 2023',
     },
     {
-        title: 'Software Engineer II',
+        title: 'Software Engineer I',
         company: 'Kyocera',
         duration: 'April 2016 - April 2019',
     },
